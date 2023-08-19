@@ -11,7 +11,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "dist/as201-ms-procedure-fe",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/as201-ms-procedure-fe",
             "index": "src/index.html",
