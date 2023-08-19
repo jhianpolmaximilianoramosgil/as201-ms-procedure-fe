@@ -1,0 +1,130 @@
+<br />
+<br />
+<div class="container" style="text-align: center">
+    <div>
+        <br />
+        <br />
+        <h1>ESTUDIANTE EGRESADO</h1>
+    </div>
+
+    <br />
+    <form>
+        <table class="table table-striped table-bordered mat-elevation-z8">
+            <thead>
+                <tr class="table-dark">
+                    
+                    <th scope="col">ESTUDIANTE</th>
+                    <th scope="col">CARRERA</th>
+                    <th scope="col">EMAIL</th>
+                  
+                    <!-- <th scope="col">ID</th>
+                    <th scope="col">IDENTICADOR</th> -->
+                    <!-- <th scope="col" class="text-bold col-2">CONFIGURACIÓN DE PROCEDIMIENTO</th> -->
+                   
+                    <!-- <th scope="col">ESTUDIANTE</th> -->
+                    <th scope="col">INSTITUTO</th>
+                    <th scope="col">FASE</th>
+                    <th scope="col">DESCARGAR</th>
+                    <th scope="col">LINK</th>
+                  
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let procedure of procedures">
+                    <td>
+                        {{procedure.personName}}
+                        <!-- Juan Gabriel Condori Jara -->
+                        <button type="button" class="btn btn-light btn-sm"
+                            (click)="openDialogPerson(procedure.person_id)">
+                            <em class="fa fa-eye"></em> VER
+                        </button>
+                    </td>
+
+                    
+                    <td>
+                        <!-- {{procedure.career_name}} -->
+                       Análisis de Sistemas
+                        <!-- <button type="button" class="btn btn-light btn-sm"
+                            (click)="openDialogCareer(procedure.career_id)">
+                            <em class="fa fa-eye"></em> VER
+                        </button>
+                    </td> -->
+
+                    <!-- <td>{{procedure.phase_id}}</td> -->
+                      <td>{{procedure.institutionalEmail}}</td>
+
+                      <td>IESTP. Valle Grande</td>
+                    <td *ngIf="procedure.phase_id == 10">{{procedure.phase_id}} (Emisión de título) </td>
+                    <td *ngIf="procedure.phase_id == 9">{{procedure.phase_id}} ( Envio al IPFS) </td>
+                    <td *ngIf="procedure.phase_id == 8">{{procedure.phase_id}} (Registro en Blockchain) </td>
+                    <td *ngIf="procedure.phase_id == 7">{{procedure.phase_id}} (Enviar al Minedu) </td>
+                    <td *ngIf="procedure.phase_id == 6">{{procedure.phase_id}} (Post firma del Director) </td>
+                    <td *ngIf="procedure.phase_id == 5">{{procedure.phase_id}} (Secretaria resivion documentos) </td>
+                    <td *ngIf="procedure.phase_id == 4">{{procedure.phase_id}} (Pago de Título)</td>
+                    <td *ngIf="procedure.phase_id == 3">{{procedure.phase_id}} (Validación de Nota > 14) </td>
+                    <td *ngIf="procedure.phase_id == 2">{{procedure.phase_id}} (Pago de Exámen)</td>
+                    <td *ngIf="procedure.phase_id == 1">{{procedure.phase_id}} (Inicio de Trámite)</td>
+
+
+
+                    <!-- <td>{{procedure.person_id}}</td> -->
+                    <!-- <td>
+                        {{procedure.personName}}
+                        
+                        <button type="button" class="btn btn-light btn-sm"
+                            (click)="openDialogPerson(procedure.person_id)">
+                            <em class="fa fa-eye"></em> VER
+                        </button>
+                    </td> -->
+
+                    <!-- <td>{{procedure.institute_id}}</td> -->
+
+                    <td>
+                        <button type="button" *ngIf="procedure.phase_id == 8" class="btn btn-danger btn-sm"
+                            (click)="descargarPDF()" >
+                            <em class="fa-solid fa-download" style="color: white"></em>
+                            DESCARGAR
+                        </button>
+                    </td>
+
+                    <!-- <button (click)="descargarPDF()">Descargar PDF</button> -->
+
+
+
+                    <td> 
+                
+                        <button type="button" *ngIf="procedure.phase_id == 8" class="btn btn-danger btn-sm" >
+                            <em class="fa-solid fa-download"></em>
+                            <a  href={{procedure.link}} target="_blank" style="color: white">LINK</a> 
+                        </button>
+                    </td>
+
+
+
+                    <!-- <td style="text-align: center">
+                        <button type="button" class="btn btn-warning mr-2"
+                            (click)="editProcedure(procedure)">Editar</button>
+      
+                    </td> -->
+                </tr>
+            </tbody>
+        </table>
+        <div *ngIf="procedures.length == 0" style="text-align: center">
+            <p class="fw-semibold fs-6" style="color: #BD1F09;">
+                <em class="fa-solid fa-circle-xmark"></em> Sin Registros...
+            </p>
+        </div>
+
+        <td style="text-align: center">
+
+            <button type="button" class="btn btn-danger btn-sm">
+                <em class="btn btn-dark"></em>
+                <a href="http://localhost:3000/" target="_blank" style="color: white">Subir IPFS</a>
+            </button>
+
+        </td>
+
+        <!-- <pagination-controls (pageChange)="procedure_table_page = $event" previousLabel="Anterior"
+            nextLabel="Siguiente"></pagination-controls> -->
+    </form>
+</div>

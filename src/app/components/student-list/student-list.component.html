@@ -1,0 +1,108 @@
+<br/>
+<br/>
+
+<div class="container" style="text-align: center" >
+    <div class="container  p-1">
+        <h1>ESTUDIANTE EGRESADO</h1>
+    </div>
+    <br/>
+    <br/>
+    <button class="btn btn-dark" (click)="pdfStudent()">
+        <em class='fa-solid fa-circle-down'></em>
+        PDF
+    </button>
+    
+    <form id="pdfStudent">
+        <table class="table table-striped table-bordered mat-elevation-z8">
+            <thead>
+                <tr class="table-dark">
+                    <th scope="col">PERSONA</th>
+                    <th scope="col">CARRERA</th>
+                    <th scope="col">EMAIL INSTITUCIONAL</th>
+                    <!-- <th scope="col">FECHA ADMISIÓN</th> -->
+                    <!-- <th scope="col">APODERADO</th> -->
+                    <th scope="col">CELULAR</th>
+                    <th scope="col" style="text-align: center">FASE</th>
+                    <th scope="col" style="text-align: center">DESCARGAR</th>
+                    <th scope="col" style="text-align: center">LINK</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let student of students">
+                    <td>
+                        {{student.person_name}}
+                        <button type="button" class="btn btn-light btn-sm" (click)="openDialogPerson(student.person_id)">
+                        <em class="fa fa-eye"></em> VER
+                    </button>
+                    </td>
+                    <td>
+                        <!-- {{student.career_name}} -->
+                        Analisis de Sistemas
+                        <button type="button" class="btn btn-light btn-sm" (click)="openDialogCareer(student.career_id)">
+                        <em class="fa fa-eye"></em> VER
+                    </button>
+                    </td>
+                    <td>{{student.institutional_email}}</td>
+                    <!-- <td>{{student.admission_date | date:'dd-MMMM-yyyy'}}</td> -->
+                    <!-- <td>{{student.guardian_name}}</td> -->
+                    <td>{{student.home_phone}}</td>
+
+                    <td *ngIf="student.phase_id == 10" >{{student.phase_id}} (Emisión de título) </td>
+                    <td *ngIf="student.phase_id == 9" >{{student.phase_id}} ( Envio al IPFS) </td>
+                    <td *ngIf="student.phase_id == 8" >{{student.phase_id}} (Registro en Blockchain) </td>
+                    <td *ngIf="student.phase_id == 7" >{{student.phase_id}} (Enviar al Minedu) </td>
+                    <td *ngIf="student.phase_id == 6" >{{student.phase_id}} (Post firma del Director) </td>
+                    <td *ngIf="student.phase_id == 5" >{{student.phase_id}} (Secretaria resivion documentos) </td>
+                    <td *ngIf="student.phase_id == 4" >{{student.phase_id}} (Pago de Título)</td>
+                    <td *ngIf="student.phase_id == 3" >{{student.phase_id}} (Validación de Nota > 14) </td>
+                    <td *ngIf="student.phase_id == 2" >{{student.phase_id}} (Pago de Exámen)</td>
+                    <td *ngIf="student.phase_id == 1" >{{student.phase_id}} (Inicio de Trámite)</td>
+
+                   <!-- <td style="text-align: center">
+                         <button type="button" *ngIf="student.status == 'Estudiante'" class="btn btn-dark btn-sm" (click)="editStudent(student)">
+                            <em class="fa-sharp fa-solid fa-pen-to-square"></em>
+                            EDITAR
+                        </button>  
+                       <button type="button" *ngIf="student.status == 'Estudiante'" class="btn btn-danger btn-sm" (click)="deleteGraduatedStudent(student.id)">
+                            <em class="fa-solid fa-trash"></em>
+                            EGRESAR
+                        </button>
+                        <button type="button" *ngIf="student.status == 'Estudiante'" class="btn btn-danger btn-sm" (click)="deleteRetiredStudent(student.id)">
+                            <em class="fa-solid fa-trash"></em>
+                            RETIRAR
+                        </button>
+                        <button type="button" *ngIf="student.status == 'Egresado' || student.status == 'Retirado'" class="btn btn-warning btn-sm" (click)="restoreStudent(student.id)">
+                            <em class="fa-solid fa-trash-can-arrow-up"></em>
+                            ESTUDIANTE
+                        </button>  
+                    </td>  -->
+                    <td> 
+                    <button type="button" *ngIf="student.phase_id == 8" class="btn btn-danger btn-sm" (click)="report(student.id)">
+                        <em class="fa-solid fa-download" style="color: white"></em>
+                       DESCARGAR
+                    </button>
+                </td>
+                <td> 
+                
+                    <button type="button" *ngIf="student.phase_id == 8" class="btn btn-danger btn-sm" >
+                        <em class="fa-solid fa-download"></em>
+                        <a  href={{student.link}} target="_blank" style="color: white">LINK</a> 
+                    </button>
+                </td>
+                </tr>
+            </tbody>
+        </table>
+        <div *ngIf="students.length == 0" style="text-align: center">
+            <p class="fw-semibold fs-6" style="color: #BD1F09;">
+                <em class="fa-solid fa-circle-xmark"></em> Sin Registros...
+            </p>
+        </div>
+    </form>
+    <!-- <pagination-controls (pageChange)="student_table_page = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls> -->
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>

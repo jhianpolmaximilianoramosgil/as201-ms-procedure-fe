@@ -1,0 +1,72 @@
+<div class="container" style="text-align: center">
+  <h3>Solicitudes de Tramites</h3>
+</div>
+<br>
+<table class="table  table-sm align-middle" data-search="true" data-page-list="[5, 10, 15, 20, all]">
+  <thead>
+    <tr class="table-dark" id="trhead">
+      <th scope="col" class="text-bold">Lote</th>
+      <th scope="col" class="text-bold">Tramitante</th>
+      <th scope="col" class="text-bold">Tipo de Solicitud</th>
+      <th scope="col" class="text-bold">Fase</th>
+      <th scope="col" class="text-bold">Evidencia</th>
+
+      <th scope="col" class="text-bold">Fecha Creada</th>
+      <th scope="col" class="text-bold">Fecha Actualizada</th>
+      <th scope="col" class="text-bold">Acción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let procedure of procedures">
+      <td scope="row">{{procedure.batch}}</td>
+      <td scope="row">{{procedure.person_name}}</td>
+      <td scope="row">{{procedure.procedure_type_name}}</td>
+      <td scope="row">{{procedure.phase_name}}</td>
+      <td scope="row">
+        <div *ngIf="procedure.attachments && procedure.attachments.length > 0">
+          <ul>
+            <li *ngFor="let attachment of procedure.attachments">
+              <a 
+                style="cursor: pointer; color: blue;" matTooltip="Ver"
+                (click)="
+                  openAttachmentPreview(attachment.imageId, attachment.url)
+                "
+              > {{ attachment.imageId }}</a>
+
+              <!-- <i
+                class="fa-solid fa-eye" style="cursor: pointer;" matTooltip="Ver"
+                (click)="
+                  openAttachmentPreview(attachment.imageId, attachment.url)
+                "
+              ></i> -->
+            </li>
+          </ul>
+        </div>
+
+      </td>
+      <td scope="row">{{procedure.createdDate}}</td>
+      <td scope="row">{{procedure.modifiedDate}}</td>
+
+      <td scope="row">
+        <button *ngIf="procedure.phaseId == '1' || procedure.phaseId == '3' " class="btn btn-warning" (click)="validarProcedimiento(procedure.id)">
+          Validar
+        </button>
+        <button *ngIf="procedure.phaseId == '2'" class="btn btn-warning" (click)="openDialog(procedure.id)">
+          Validar
+        </button>
+        <!--
+         <button *ngIf="procedure.phaseId == '3'" class="btn btn-success">
+          Validar
+        </button>
+        -->
+
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div *ngIf="procedures.length == 0" style="text-align: center">
+  <p class="fw-semibold fs-6">
+    <i class="fa-regular fa-circle-xmark"></i> No hay tramites disponibles
+  </p>
+</div>

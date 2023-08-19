@@ -1,0 +1,53 @@
+<div class="container">
+  <h2 class="fw-semibold" mat-dialog-title>
+    {{ data.upload ? "Adjuntar" : "Archivo Adjunto" }}
+  </h2>
+  <button
+    type="button"
+    style="font-size: 10px; padding: 4px 8px"
+    class="btn btn-danger btn-sm"
+    matTooltip="Cerrar"
+    mat-button
+    (click)="Cerrar()"
+  >
+    X
+  </button>
+</div>
+<div
+*ngIf="!data.upload"
+class="d-flex flex-column justify-content-center align-items-center"
+>
+<p style="font-weight: bold">Codigo: IM{{ data.name }}</p>
+<img style="max-width: 400px; max-height: 400px" src="{{ data.url }}" />
+</div>
+<br />
+<form>
+  <div class="container" *ngIf="data.upload">
+    <input
+      type="file"
+      (change)="onFileSelected($event)"
+      accept=".jpg, .jpeg, .png"
+    />
+    <div class="d-grid gap-2 form-floating">
+      <button
+        (click)="uploadImage(data.procedureId)"
+        [disabled]="!fileSelected"
+        [ngClass]="fileSelected ? 'btn btn-success' : 'btn btn-dark'"
+      >
+        Subir
+      </button>
+    </div>
+  </div>
+
+  <div
+    *ngIf="previewUrl"
+    class="d-flex flex-column justify-content-center align-items-center"
+  >
+    <img
+      style="max-width: 400px; max-height: 400px"
+      [src]="previewUrl"
+      alt="Vista previa"
+    />
+    <p>Vista Previa..</p>
+  </div>
+</form>

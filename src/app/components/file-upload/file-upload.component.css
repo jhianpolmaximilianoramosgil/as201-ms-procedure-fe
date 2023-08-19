@@ -1,0 +1,82 @@
+.preview-container {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .preview-container img {
+    max-width: 500%;
+    max-height: 500%;
+  }
+
+
+  .preview-image-large {
+    width: 300px;
+    height: auto;
+    border: 2px solid red; /* Agrega un borde rojo para verificar */
+  }
+
+  .loading-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
+  .loading-icon {
+    font-size: 3em; /* Ajusta el tamaño de la ruedita según lo necesites */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    margin-top: 20px; /* Agrega espacio desde la parte superior */
+  }
+
+  .center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    margin-top: 20px; /* Agrega espacio desde la parte superior */
+  }
+  
+  .loading-text {
+    font-size: 1.2em; /* Ajusta el tamaño de la fuente de las palabras según lo necesites */
+  }
+  
+
+  .center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajusta la altura según tus necesidades */
+  }
+  
+  .center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajusta la altura según tus necesidades */
+  }
+  
+ 
+
+  
+  .center-text {
+    text-align: center;
+  }
+
+  .preview-details {
+    text-align: center;
+  }
+  
+  
+
+ 
+  /* Resto de tus estilos */
+  

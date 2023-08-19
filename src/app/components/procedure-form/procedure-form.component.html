@@ -1,0 +1,39 @@
+<div class="container" style="text-align: center">
+  <br/>
+  <br/>
+  <h1>{{this.procedureService.procedureSelected ? "EDITAR PROCEDURE" : "REGISTRAR PROCEDURE"}}</h1>
+</div>
+
+<div class="container">
+  <form [formGroup]="procedureForm" (ngSubmit)="save()">
+      <br/>
+
+      <div class="row">
+
+          <div class="dropdown col">
+              <label for="person_id" class="form-label">PERSONA</label>
+              <select class="form-select" aria-label="person_id" formControlName="person_id">
+                  <option selected>Seleccione</option>
+                  <option *ngFor="let person of persons" value={{person.id}} style="color: black; font-weight: bold;">
+                      {{person.name}} {{person.lastname}}
+                  </option>
+              </select>
+          </div>
+          <div class="form-outline col">
+              <label for="link" class="form-label">LINK</label>
+              <input type="text" class="form-control" formControlName="link">
+          </div>
+      </div>
+      <br/>
+      <br/>
+      <button type="button" class="btn btn-danger" (click)="btnCancel()">
+          <em class="fa-solid fa-ban"></em>
+          CANCELAR
+      </button>
+      <!-- <button type="button" class="btn btn-dark" type="submit" [disabled]="personForm.invalid" (click)="edit ? update() : register()"> -->
+      <button type="button" class="btn btn-dark" (click)="cambiarPhase10(1)">
+          <em class="fa-solid fa-floppy-disk"></em>
+          ACTUALIZAR
+      </button>
+  </form>
+</div>

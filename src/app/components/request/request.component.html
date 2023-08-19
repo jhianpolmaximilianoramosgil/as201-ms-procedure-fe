@@ -1,0 +1,21 @@
+<div class="container" style="text-align: center; font-weight: bold;">
+    <h3>Lista de trámites</h3>
+  </div>
+<div *ngFor="let procedureType of proceduresTypes" class="col-md-4">
+    <div class="card text-center">
+        <div class="card-header bg-dark text-white d-flex" style="text-align: center;">
+            {{procedureType.name}}
+        </div>
+        <img class="card-img-top" [src]="image">
+        <div class="card-body">
+            <!--Abreviado: {{procedureType.abreviaton}} -->
+            <p>{{description}}</p>
+            <button  class="btn btn-danger btn-block" (click)="cargarProcedimiento()"  >
+                <!-- <a class="btn btn-danger btn-block"> -->
+                    Solicitar
+                <!-- </a> -->
+            </button>
+            
+        </div> 
+    </div>
+</div>

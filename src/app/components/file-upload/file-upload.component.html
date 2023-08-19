@@ -1,0 +1,32 @@
+<div class="center-content">
+<input type="file" (change)="handleFileInput($event)" accept=".pdf,.jpg,.jpeg,.png" />
+<div *ngIf="selectedFile" class="center-content">
+  <div class="preview-container">
+    <div class="preview-image">
+      <ng-container *ngIf="selectedFile.type.includes('pdf')">
+        <i class="far fa-file-pdf fa-5x"></i>
+      </ng-container>
+      <img [src]="imageData" alt="Uploaded Preview" class="preview-image-large" *ngIf="!selectedFile.type.includes('pdf') && imageData" />
+    </div>
+    <div class="preview-details" >
+      <p class="center-text">Select Arhivo {{ selectedFile.name }}</p>
+    </div>
+  </div>
+  <br />
+<br />
+<br />
+<br />
+<div *ngIf="loading" class="loading-message">
+    <i class="fas fa-spinner fa-spin  loading-icon"></i>
+    <span class="loading-text">Generando hash del archivo seleccionado...</span>
+  </div>
+  <div *ngIf="hash">
+    <p>Hash: {{ hash }}</p>
+  </div>
+</div>
+</div>
+
+<button type="button" class="btn btn-warning" (click)="btnEnviarHash()">
+    <em class="fa-solid fa-ban"></em> ENVIAR
+</button>
+

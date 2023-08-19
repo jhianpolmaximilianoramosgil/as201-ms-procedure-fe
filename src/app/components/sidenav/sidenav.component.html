@@ -1,0 +1,26 @@
+<div  *ngIf="isConnect" class="sidenav bg-dark" [ngClass]="collapsed ? 'sidenav-collapsed' : ''">
+    <div class="logo-container">
+        <a (click)="toggleCollapse()" matTooltip="Extender Menú">
+            <i class=" logo fa-solid fa-bars fa-lg bars-icon"></i>
+        </a>
+    </div>
+    <br>
+    <ul class="sidenav-nav" *ngIf="isAdmin" >
+        <li class="sidenav-nav-item" *ngFor="let data of navDataC">
+           
+            <a class="sidenav-nav-link" [routerLink]="[data.routeLink]" matTooltip={{data.label}}>
+                <i class="sidenav-link-icon" [class]="data.icon" ></i>
+                <span class="sidenav-link-text" *ngIf="collapsed">{{data.label}}</span>
+
+            </a>
+        </li>
+    </ul>
+    <ul class="sidenav-nav" *ngIf="!isAdmin">
+        <li class="sidenav-nav-item" *ngFor="let data of navData">
+            <a class="sidenav-nav-link" [routerLink]="[data.routeLink]" matTooltip={{data.label}}>
+                <i class="sidenav-link-icon" [class]="data.icon"></i>
+                <span class="sidenav-link-text" *ngIf="collapsed">{{data.label}}</span>
+            </a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,30 @@
+<style>
+  .column {
+    width: 50%;
+    float: left;
+    padding: 10px;
+  }
+</style>
+<h2 class="fw-semibold" mat-dialog-title>Registrar nota</h2>
+<div class="column"  >
+    <p  style="font-weight: bold;">Codigo</p>
+    <p  style="font-weight: bold;">Tipo de solicitud</p>
+    <p  style="font-weight: bold;">Lote</p>
+    <p  style="font-weight: bold;">Fase</p>
+    <p  style="font-weight: bold;">Tramitante</p>
+    <p  style="font-weight: bold;" >Nota</p>
+</div>
+<div class="column"  >
+    <p class="fw-semibold" style="font-size: 15px;" >TR{{ data.id }}</p>
+    <p class="fw-semibold" style="font-size: 15px;" >{{ data.procedure_type_name }}</p>
+    <p class="fw-semibold" style="font-size: 15px;">{{ data.batch }}</p>
+    <p class="fw-semibold" style="font-size: 15px;" >{{ data.phase_name }}</p>
+    <p class="fw-semibold" style="font-size: 15px;" >{{ data.person_name }}</p>
+    <input class="fw-semibold" [(ngModel)]="note" type="text" (input)="onInputChange($event)" pattern="[0-9]*"  />
+    <button class="btn btn-success btn-block" [disabled]="!btnEnabled"  (click)="validarProcedimiento()">
+        Confirmar
+      </button>
+      <div style="color: red; font-size: small; font-weight: bold;" *ngIf="!isValidNumber">Ingresa un número válido menor de 20.</div>
+  
+</div>
+<br />

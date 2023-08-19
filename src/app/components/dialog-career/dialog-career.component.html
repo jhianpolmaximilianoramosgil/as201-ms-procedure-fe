@@ -1,0 +1,52 @@
+<h1 mat-dialog-title>DATOS DE LA CARRERA</h1>
+
+<br/>
+
+<div mat-dialog-content>
+    <div class="row">
+        <div class="form-outline col">
+            <label class="form-label">CARRERA PROFESIOANL</label>
+            <textarea class="form-control" disabled="true">{{dataCareer.name}}</textarea>
+        </div>
+        
+      
+            <div class="form-outline col">
+                <label class="form-label">CANTIDAD DE SEMESTRES</label>
+                <textarea class="form-control" disabled="true">6</textarea>
+                <!-- <textarea class="form-control" disabled="true">{{dataCareer.quantitySemester}}</textarea> -->
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <div class="row">
+        <div class="form-outline col">
+            <label class="form-label">ÁREA</label>
+            <textarea class="form-control" disabled="true">{{dataCareer.area}}</textarea>
+        </div>
+        <div class="form-outline col">
+            <label class="form-label">INSTITUTO</label>
+            <textarea class="form-control" disabled="true">I.E.S.T.P Valle Grande</textarea>
+            <!-- <textarea class="form-control" disabled="true">{{dataCareer.institute_id}}</textarea> -->
+        </div>
+    </div>
+
+    <br/>
+    <br/>
+    <div class="row">
+        <div class="form-outline col">
+            <label class="form-label">PENSIÓN MENSUAL</label>
+            <textarea class="form-control" disabled="true">{{dataCareer.pension}}</textarea>
+        </div>
+        <div class="form-outline col">
+            <label class="form-label">CANTIDAD DE CURSOS</label>
+            <textarea class="form-control" disabled="true">9</textarea>
+            <!-- <textarea class="form-control" disabled="true">{{dataCareer.quantityCourse}}</textarea> -->
+        </div>
+    </div>
+
+    <br/>
+    <br/>
+    <button type="button" class="btn btn-danger" [mat-dialog-close]="true">
+        <em class="fa-solid fa-ban"></em> CERRAR
+    </button>
+</div>

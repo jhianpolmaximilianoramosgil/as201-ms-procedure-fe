@@ -1,0 +1,46 @@
+button {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+select {
+    width: 615px;
+}
+
+input {
+    width: 615px;
+}
+
+h1 {
+    color: white;
+    background-color: black;
+    font-weight: normal;
+    font-size: 35px;
+    font-family: fantasy;
+}
+
+.form-group {
+    position: relative;
+    width: 250px;
+}
+
+.form-group input {
+    border: 1px solid #ddd;
+    height: 40px;
+    padding: 0 15px;
+    border-radius: 5px;
+    font-size: 15px;
+    width: 100%;
+}
+
+.eyeicon {
+    position: absolute;
+    right: 0px;
+    top: 43px;
+    cursor: pointer;
+}

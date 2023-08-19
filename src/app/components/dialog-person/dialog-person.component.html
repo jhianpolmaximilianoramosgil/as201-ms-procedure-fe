@@ -1,0 +1,53 @@
+<h1 mat-dialog-title>DATOS DE LA PERSONA</h1>
+
+<br/>
+
+<div mat-dialog-content>
+    <div class="row">
+        <div class="form-outline col">
+            <label class="form-label">TIPO DE IDENTIFICACIÓN</label>
+            <textarea class="form-control" disabled="true">{{dataPerson.id_type}}</textarea>
+        </div>
+        <div class="form-outline col">
+            <label class="form-label">NÚMERO DE IDENTIFICACIÓN</label>
+            <textarea class="form-control" disabled="true">{{dataPerson.id_number}}</textarea>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <div class="row">
+        <div class="form-outline col">
+            <label class="form-label">NOMBRES</label>
+            <textarea class="form-control" disabled="true">{{dataPerson.name}}</textarea>
+        </div>
+        <div class="form-outline col">
+            <label class="form-label">APELLIDOS</label>
+            <textarea class="form-control" disabled="true">{{dataPerson.lastname}}</textarea>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <div class="row">
+        <div class="form-outline col">
+            <label class="form-label">CELULAR</label>
+            <textarea class="form-control" disabled="true">{{dataPerson.cellphone}}</textarea>
+        </div>
+        <div class="form-outline col">
+            <label class="form-label">EMAIL</label>
+            <textarea class="form-control" disabled="true">{{dataPerson.email}}</textarea>
+        </div>
+    </div>
+    <!-- <br/>
+    <br/>
+    <div class="row">
+        <div class="form-outline col">
+            <label class="form-label">USUARIO</label>
+            <textarea class="form-control" disabled="true">{{dataPerson.username}}</textarea>
+        </div>
+    </div> -->
+    <br/>
+    <br/>
+    <button type="button" class="btn btn-danger" [mat-dialog-close]="true">
+        <em class="fa-solid fa-ban"></em> CERRAR
+    </button>
+</div>

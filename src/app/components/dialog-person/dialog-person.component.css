@@ -1,0 +1,23 @@
+button {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+textarea {
+    height: 5px;
+    width: 350px;
+}
+
+h1 {
+    color: black;
+    background-color: none;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: fantasy;
+    text-align: center;
+}
