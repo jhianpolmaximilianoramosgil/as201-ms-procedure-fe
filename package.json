@@ -5,7 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "watch": "ng build --configuration production --base-href /as201-ms-procedure-fe/",
+    "build:prod": "ng build --configuration production --base-href /as201-ms-procedure-fe/",
+    "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
   "private": true,
