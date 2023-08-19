@@ -16,7 +16,7 @@ export class LoginService {
   username: string | undefined;
   password: string | undefined;
   // private url: string = 'http://localhost:8090/login'; 
-  private url: string = 'http://www.deillanes.com/backend/login/login';
+  private url: string = 'https://as201-ms-login.azurewebsites.net/login';
   private urlstudent: string = 'http://deillanes.com/backend/student/student';
   // private url_student: string = 'http://localhost:8086/v1/student';
   private url_student: string = 'http://deillanes.com/backend/student/student';
