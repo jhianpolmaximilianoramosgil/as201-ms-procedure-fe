@@ -16,7 +16,7 @@ export const environment = {
   url_procedure: 'https://as201-ms-procedure-suscriptor-be.azurewebsites.net/v1/procedure'
   // https://as201-ms-procedure-suscriptor-be.azurewebsites.net/v1/procedure
  
-  // url_procedure: 'http://localhost:8088/v1/procedure'
+   //url_procedure: 'http://localhost:8088/v1/procedure'
 };
 
 /*
